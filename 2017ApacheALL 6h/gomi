@@ -1,0 +1,10 @@
+		$unix_time = strtotime($request_time);
+		printf("unix_time = %d\n", $unix_time);
+		$tm = localtime($unix_time + 9*60*60, TRUE);	# UTC->JST
+
+		printf("year  = %04d\n", $tm["tm_year"] + 1900);
+		printf("month = %02d\n", $tm["tm_mon"] + 1);
+		printf("day   = %02d\n", $tm["tm_mday"]);
+		printf("hour  = %02d\n", $tm["tm_hour"]);
+		printf("min   = %02d\n", $tm["tm_min"]);
+		printf("sec   = %02d\n", $tm["tm_sec"]);
